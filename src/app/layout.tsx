@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "@/components/header";
+import localFont from 'next/font/local'
+
+const Aeonik = localFont({
+  src: './fonts/Aeonik-Regular.otf',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "Chainstore | Where the future trades",
-  description: "Chainstore is a decentralized commerce platform for trading digital assets.",
+  description: "A way to flex your nfts on warpcast!",
 };
 
 export default function RootLayout({
@@ -13,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={Aeonik.className}>
         {children}
       </body>
     </html>
