@@ -5,7 +5,7 @@ import { serveStatic } from 'frog/serve-static'
  
 const app = new Frog({
   title: 'Chainstore',
-  basePath: '/api/dev',
+  basePath: '/api'
 })
  
 devtools(app, { serveStatic })
