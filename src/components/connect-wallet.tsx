@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function ConnectWallet() {
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
   const [provider, setProvider] = useState<any>(null);
   
   const router = useRouter();
@@ -33,7 +33,7 @@ export default function ConnectWallet() {
       appChainIds: [8453],
     });
     
-    const web3 = sdk.makeWeb3Provider({ options: "smartWalletOnly" });
+    const web3 = sdk.makeWeb3Provider({ options: "all" });
     setProvider(web3);
 
     web3.request({ method: "eth_accounts" }).then((account: any) => {
